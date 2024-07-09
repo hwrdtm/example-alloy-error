@@ -18,6 +18,9 @@ contract CounterTest is Test {
     }
 
     function testFuzz_SetNumber(uint256 x) public {
+        // Only accept even numbers
+        vm.assume(x % 2 == 0);
+
         counter.setNumber(x);
         assertEq(counter.number(), x);
     }

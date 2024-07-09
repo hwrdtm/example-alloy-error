@@ -1,0 +1,19 @@
+[package]
+name = "example-alloy-error"
+version = "0.1.0"
+edition = "2021"
+default-run = "alloy"
+
+[dependencies]
+alloy = { version = "0.1", features = ["full", "node-bindings"] }
+ethers = "2.0"
+eyre = "0.6.12"
+tokio = { version = "1.38.0", features = ["full"] }
+
+[[bin]]
+name = "ethers"
+path = "src/ethers.rs"
+
+[[bin]]
+name = "alloy"
+path = "src/alloy.rs"
